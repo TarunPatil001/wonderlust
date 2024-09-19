@@ -23,6 +23,7 @@ Install dependencies
 ```bash
   npm i express
   npm i mongoose
+  npm i ejs
 ```
 
 Start the server
