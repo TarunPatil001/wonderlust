@@ -24,6 +24,7 @@ Install dependencies
   npm i express
   npm i mongoose
   npm i ejs
+  npm i ejs-mate
 ```
 
 Start the server
