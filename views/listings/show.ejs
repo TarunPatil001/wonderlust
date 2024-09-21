@@ -21,8 +21,11 @@
         </li>
     </ul>
     <!-- <br> -->
-    <a href="/listings/<%= listing._id %>/edit">Edit this Listing</a>
-    <br><br>
-    <form action="/listings/<%= listing._id %>/?_method=DELETE" method="post">
-        <button>Delete this listing.</button>
-    </form>
+    <div class="btn-edit-delete">
+        <form action="/listings/<%= listing._id %>/edit" method="get">
+            <button class="btn btn-info">Edit</button>
+        </form>
+        <form action="/listings/<%= listing._id %>/?_method=DELETE" method="post">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>

@@ -9,6 +9,11 @@ body{
     flex: 1;
 }
 
+.btn-edit-delete{
+    display: flex;
+    gap: 20px;
+}
+
 /* Navbar */
 .navbar{
     height: 5rem;
@@ -101,7 +106,6 @@ body{
 
 /* New Page */
 .add-btn{
-    background-color: #fe424d !important;
     border: none !important;
 }
 
