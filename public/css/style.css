@@ -9,10 +9,6 @@ body{
     flex: 1;
 }
 
-.btn-edit-delete{
-    display: flex;
-    gap: 20px;
-}
 
 /* Navbar */
 .navbar{
@@ -109,6 +105,31 @@ body{
     border: none !important;
 }
 
+.show-img{
+    height: 30vh;
+}
 
 
+/* Show Page */
+.btns{
+    display: flex;
+}
 
+.btn{
+    border: none !important;
+}
+
+.btn-edit:hover{
+    background-color: #17a2b8 !important; /* Bootstrap's btn-info color */
+    color: white !important;
+}
+
+.btn-delete:hover{
+    background-color: #dc3545 !important; /* Bootstrap's btn-danger color */
+        color: white !important;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
