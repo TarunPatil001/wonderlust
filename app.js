@@ -48,7 +48,7 @@ app.get("/listings/new", (req, res) => {
 });
 
 // Show Route
-app.get("/listings/:id", async (req, res) => {
+app.get("/listings/:id", wrapAsync (async (req, res) => {
     let {
         id
     } = req.params;
@@ -56,7 +56,7 @@ app.get("/listings/:id", async (req, res) => {
     res.render("listings/show.ejs", {
         listing
     });
-});
+}));
 
 // Create Route
 app.post("/listings", wrapAsync(async (req, res, next) => {
@@ -126,7 +126,8 @@ app.use((err, req, res, next) => {
     let {
         statusCode = 500, message = "Something went wrong!"
     } = err;
-    res.status(statusCode).send(message);
+    // res.status(statusCode).send(message);
+    res.status(statusCode).render("error.ejs", { message }); 
 });
 
 app.listen(8080, () => {
