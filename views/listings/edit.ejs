@@ -5,18 +5,24 @@
     <div class="col-8 offset-2">
         <br><br>
         <h3>Edit Listing : </h3>
-        <form method="post" action="/listings/<%=listing._id%>?_method=PUT">
+        <form method="post" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation" >
             <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
+                <label for="title" class="form-label">Title <sup class="allRequired">*</sup></label>
                 <input type="text" name="listing[title]" id="title" value="<%=listing.title%>"
-                    placeholder="Edit a catchy title" class="form-control">
+                    placeholder="Edit a catchy title" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter title.
+                    </div>
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+                <label for="description" class="form-label">Description <sup class="allRequired">*</sup></label>
                 <textarea name="listing[description]" id="description"
                     placeholder="Edit description in more creative way."
-                    class="form-control"><%=listing.description%></textarea>
+                    class="form-control" required><%=listing.description%></textarea>
+                    <div class="invalid-feedback">
+                        Please enter description.
+                    </div>
             </div>
 
             <div class="mb-3">
@@ -27,22 +33,31 @@
 
             <div class="row">
                 <div class="mb-3 col-md-4">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="number" name="listing[price]" id="price" value="<%=listing.price%>" placeholder="1200"
-                        class="form-control">
+                    <label for="price" class="form-label">Price (&#8377;.)<sup class="allRequired">*</sup></label>
+                    <input type="number" min="0" name="listing[price]" id="price" value="<%=listing.price%>" placeholder="1200"
+                        class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter valid price.
+                        </div>
                 </div>
 
                 <div class="mb-3 col-md-8">
-                    <label for="country" class="form-label">Country</label>
+                    <label for="country" class="form-label">Country <sup class="allRequired">*</sup></label>
                     <input type="text" name="listing[country]" id="country" value="<%=listing.country%>"
-                        placeholder="Enter country" class="form-control">
+                        placeholder="Enter country" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Please enter country.
+                        </div>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="location" class="form-label">Location</label>
+                <label for="location" class="form-label">Location <span class="fas fa-map-marker-alt"></span> <sup class="allRequired">*</sup></label>
                 <input type="text" name="listing[location]" id="location" value="<%=listing.location%>"
-                    placeholder="Pune, Maharashtra" class="form-control">
+                    placeholder="Pune, Maharashtra" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter location.
+                    </div>
             </div>
 
             <button class="btn btn-primary mb-3">Update</button>
