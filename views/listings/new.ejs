@@ -6,43 +6,58 @@
         <div class="col-8 offset-2">
             <br><br>
             <h3>Create New Listing :</h3>
-            <form action="/listings" method="post">
+            <form action="/listings" method="post" novalidate class="needs-validation">
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title <sup class="allRequired">*</sup></label>
                     <input type="text" name="listing[title]" id="title" placeholder="Add a catchy title"
-                        class="form-control" />
+                        class="form-control" required />
+                    <div class="invalid-feedback">
+                        Please enter title.
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
+                    <label for="description" class="form-label">Description<sup class="allRequired">*</sup></label>
                     <textarea name="listing[description]" id="description"
-                        placeholder="Write description about listing." class="form-control"></textarea>
+                        placeholder="Write description about listing." class="form-control" required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter description.
+                        </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="image-link" class="form-label">Image Link</label>
                     <input type="text" name="listing[image]" id="image-link" placeholder="Enter image URL/Link"
-                        class="form-control" />
+                        class="form-control" />                        
                 </div>
 
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label for="price" class="form-label">Price</label>
-                        <input type="number" name="listing[price]" id="price" placeholder="1200"
-                            class="form-control" />
+                        <label for="price" class="form-label">Price (&#8377;.) <sup class="allRequired">*</sup></label>
+                        <input type="number" min="0" name="listing[price]" id="price" placeholder="1200" class="form-control"
+                            required />
+                            <div class="invalid-feedback">
+                                Please enter valid price.
+                            </div>
                     </div>
 
                     <div class="mb-3 col-md-8">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" name="listing[country]" id="country" placeholder="India"
-                            class="form-control" />
+                        <label for="country" class="form-label">Country <sup class="allRequired">*</sup></label>
+                        <input type="text" name="listing[country]" id="country" placeholder="India" class="form-control"
+                            required />
+                            <div class="invalid-feedback">
+                                Please enter country.
+                            </div>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="location" class="form-label">Location</label>
+                    <label for="location" class="form-label">Location <span class="fas fa-map-marker-alt"></span> <sup class="allRequired">*</sup></label>
                     <input type="text" name="listing[location]" id="location" placeholder="Pune, Maharashtra"
-                        class="form-control" />
+                        class="form-control" required />
+                        <div class="invalid-feedback">
+                            Please enter location.
+                        </div>
                 </div>
 
                 <button type="submit" class="btn add-btn btn-success">Add</button><br /><br />
