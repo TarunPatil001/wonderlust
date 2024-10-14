@@ -79,7 +79,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Cards */
-.listing-card{
+.card{
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -127,7 +127,7 @@ input::-webkit-inner-spin-button {
     display: flex;
 }
 
-.remove-border{
+.btn{
     border: none !important;
 }
 
